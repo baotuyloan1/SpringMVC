@@ -6,9 +6,39 @@
 	<artifactId>EducationPortal</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>EducationPortal Maven Webapp</name>
+	<name>EducationPortal Maven Webapp</name>	
 	<url>http://maven.apache.org</url>
+	<properties>
+		<spring-version>5.3.14</spring-version>
+	</properties>
 	<dependencies>
+		<!-- chứa các class và interface để hỗ trợ cho việc quản lý và tạo các 
+			bean trong Spring container -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+		<!-- chứa các class và interface để hỗ trợ cho việc phát triển ứng dụng 
+			web với Spring MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+
+		<!-- sử dụng các thẻ tiêu chuẩn (tag) để thực hiện các hoạt động như điều khiển 
+			luồng, lặp lại, lấy giá trị từ request và session, và format các giá trị 
+			số và ngày tháng -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- cung cấp các lớp và giao diện để xử lý yêu cầu HTTP, phản hồi và quản 
+			lý phiên. Nếu bạn không có thư viện này, bạn sẽ không thể viết Servlet hoặc 
+			JSP và triển khai chúng trên máy chủ ứng dụng. -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
