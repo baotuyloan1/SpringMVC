@@ -1,17 +1,29 @@
 package edu.fa.repository;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import edu.fa.model.Fresher;
 
 @Repository
-public class FresherRepository {
+public interface FresherRepository extends JpaRepository<Fresher, Integer> {
 
-	public boolean authenticate(Fresher fresher) {
-		if (fresher.getUsername().equals(fresher.getPassword())) {
-			return false;
-		}
+	Fresher findByUsernameAndPassword(String username, String password);
 
-		return true;
-	}
+//	public boolean authenticate(Fresher fresher) {
+//		if (fresher.getUsername().equals(fresher.getPassword())) {
+//			return false;
+//		}
+//
+//		return true;
+//	}
+//
+//	public boolean register(Fresher fresher) {
+//		if (fresher.getUsername().equals(fresher.getPassword())) {
+//			return false;
+//		}
+//
+//		return true;
+//	}
+
 }

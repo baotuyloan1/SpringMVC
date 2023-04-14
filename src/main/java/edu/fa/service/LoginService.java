@@ -13,6 +13,6 @@ public class LoginService {
 	private FresherRepository fresherRepository;
 
 	public boolean login(Fresher fresher) {
-		return fresherRepository.authenticate(fresher);
+		return (fresherRepository.findByUsernameAndPassword(fresher.getUsername(), fresher.getPassword()) != null);
 	}
 }

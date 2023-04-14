@@ -6,12 +6,45 @@
 	<artifactId>EducationPortal</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>EducationPortal Maven Webapp</name>	
+	<name>EducationPortal Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<spring-version>5.3.14</spring-version>
+		<spring-version>5.2.2.RELEASE</spring-version>
+		<java-version>1.8</java-version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.4.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>5.4.32.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>2.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>8.2.2.jre8</version>
+		</dependency>
 		<!-- chứa các class và interface để hỗ trợ cho việc quản lý và tạo các 
 			bean trong Spring container -->
 		<dependency>
@@ -27,9 +60,9 @@
 			<version>${spring-version}</version>
 		</dependency>
 
-		<!-- sử dụng các thẻ tiêu chuẩn (tag) để thực hiện các hoạt động như điều khiển 
-			luồng, lặp lại, lấy giá trị từ request và session, và format các giá trị 
-			số và ngày tháng -->
+		<!-- sử dụng các thẻ tiêu chuẩn (tag) để thực hiện các hoạt động như điều 
+			khiển luồng, lặp lại, lấy giá trị từ request và session, và format các giá 
+			trị số và ngày tháng -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -54,6 +87,15 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-war-plugin</artifactId>
 					<version>3.3.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+					<configuration>
+						<source>${java-version}</source>
+						<target>${java-version}</target>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>

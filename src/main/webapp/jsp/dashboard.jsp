@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div align="center">
-		<h2>Welcome to Education Dashboard</h2>
+		<h2>Hi ${fresher.username}, Welcome to Education Dashboard</h2>
 	</div>
 </body>
 </html>
