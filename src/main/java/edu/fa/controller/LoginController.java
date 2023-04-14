@@ -37,8 +37,9 @@ public class LoginController {
 		if (loginSerice.login(fresher)) {
 			model.addAttribute("fresher", fresher);
 			return "dashboard";
-		}else {
-			return "login";
+		} else {
+			model.addAttribute("error", true);
+			return "redirect:login";
 		}
 	}
 }
